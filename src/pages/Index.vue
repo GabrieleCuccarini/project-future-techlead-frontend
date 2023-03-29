@@ -27,7 +27,7 @@ export default {
 <template>
   <div>
     <div class="row justify-content-evenly m-4">
-      <div class="col-xl-4 col-md-6 col-sm-10 col-xs-12" v-for="perfume in perfumes" :key="perfume.id">
+      <div class="col-xl-4 col-md-6 col-sm-9" v-for="perfume in perfumes" :key="perfume.id">
         <div class="card mb-3" style="max-width: 540px;">
           <div class="row g-0">
             <div class="col-md-6" v-if="perfume.cover_img">
