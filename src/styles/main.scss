@@ -1,0 +1,67 @@
+@use "bootstrap/scss/bootstrap";
+@use "@fortawesome/fontawesome-free/css/all.min.css";
+
+:root{
+    --india-green: #318411ff;
+    --golden-gate-bridge: #ef5117ff;
+    --sunglow: #f9ca30ff;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    display: block;
+    width: 120px;
+    height: 60px;
+}
+
+
+.footer {
+    background-color: black;
+    margin-bottom: -1rem;
+    margin-top: 2rem;
+}
+
+
+.zoom {
+    transition: transform .2s;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+  }
+  
+  .zoom:hover {
+    transform: scale(0.9);
+  }
+
+.green{
+    color: #318411ff;
+}
+
+.orange{
+    color: #ef5117ff;
+}
+
+.border-orange{
+    border-color: #ef5117ff;
+}
+
+.bg-color-green{
+    background-color: #318411ff;
+}
+
+.asp-ratio {
+    aspect-ratio: 1 / 1 ;
+    max-height: 30vh;
+    min-height: 50px;
+}
