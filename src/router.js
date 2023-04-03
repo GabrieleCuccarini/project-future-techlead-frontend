@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 import Home from './pages/Home.vue';
-//import Show from './pages/Show.vue';
+import Filter from './pages/Filter.vue';
 import Index from './pages/Index.vue';
 
 const router = createRouter({
@@ -17,6 +17,11 @@ routes:
         path: '/perfumes',
         name: 'Index',
         component: Index
+        },
+        {
+        path: '/brands',
+        name: 'Filter',
+        component: Filter
         },
         // {
         // path: '/perfumes/:id',

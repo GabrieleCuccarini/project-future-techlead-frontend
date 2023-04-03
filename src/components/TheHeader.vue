@@ -12,6 +12,10 @@ export default {
         {
           label: "Shop",
           routeName: "Index",
+        },
+        {
+          label: "Search by Filter",
+          routeName: "Filter",
         }
       ],
     };

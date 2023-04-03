@@ -42,7 +42,7 @@ export default {
       if (this.currentPage > 1) {
         this.currentPage -= 1;
       }
-    },    
+    },
     goToPage(pageNumber) {
       this.currentPage = pageNumber;
     }
@@ -54,13 +54,17 @@ export default {
 </script>
 
 <template>
-
-  <div class="pagination m-4">
+  <button class="btn btn-warning opacity-75 mx-3 mt-2">
+      <a :href="'/'" class="text-decoration-none text-white">
+        Back
+      </a>
+  </button>
+  <div class="pagination mx-4">
     <button @click="previousPage" :disabled="currentPage === 1"> <i class="fa-solid fa-arrow-left"></i> </button>
-      <!-- Loop attraverso i numeri di pagina e crea un pulsante per ognuno -->
-      <div v-for="pageNumber in pageCount" :key="pageNumber">
-        <button @click="goToPage(pageNumber)" :class="{ active: pageNumber === currentPage }">{{ pageNumber }}</button>
-      </div>
+    <!-- Loop attraverso i numeri di pagina e crea un pulsante per ognuno -->
+    <div v-for="pageNumber in pageCount" :key="pageNumber">
+      <button @click="goToPage(pageNumber)" :class="{ active: pageNumber === currentPage }">{{ pageNumber }}</button>
+    </div>
     <button @click="nextPage" :disabled="currentPage === pageCount"> <i class="fa-solid fa-arrow-right"></i> </button>
   </div>
   <div>
@@ -75,7 +79,13 @@ export default {
             <div class="col-md-6">
               <div class="card-body">
                 <h5 class="card-title">{{ perfume.id }} {{ perfume.name }}</h5>
-                <p class="card-text"><b>Brand</b>: {{ perfume.brand }}</p>
+                <p class="card-text"><b>Brand</b>:
+                  <span v-if="perfume.brand_id == 1">Calvin Klein</span>
+                  <span v-else-if="perfume.brand_id == 2">Armani</span>
+                  <span v-else-if="perfume.brand_id == 3">Hermes</span>
+                  <span v-else-if="perfume.brand_id == 4">Dolce&Gabbana</span>
+                  <span v-else>PacoRabanne</span>
+                </p>
                 <p class="card-text"><b>Quantity</b>: {{ perfume.quantity }}</p>
                 <p class="card-text"><b>Price: <span class='text-danger'>€{{ perfume.price }}</span></b></p>
               </div>
@@ -85,7 +95,6 @@ export default {
       </div>
     </div>
   </div>
-
 </template>
 
 <style scoped lang="scss">
